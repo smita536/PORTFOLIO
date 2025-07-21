@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center justify-center text-center h-screen bg-cover bg-center px-4 md:px-0"
+      className="relative flex items-center justify-center text-center h-screen bg-cover bg-center px-4 md:px-0 pt-20" // Added pt-20
       style={{ backgroundImage: "url('/images/hero.jpg')" }}
     >
       {/* Overlay */}
@@ -45,13 +45,14 @@ const Home = () => {
           View Resume
         </a>
 
-        {/* Beautiful Social Icons */}
+        {/* Social Icons */}
         <div className="mt-10 flex justify-center gap-6">
           <a
             href="https://github.com/smita536"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-800 p-4 rounded-full shadow-lg hover:bg-black transition duration-300 transform hover:scale-110"
+            className="
+            bg-[#0077B5] p-4 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform           hover:scale-110"
             title="GitHub"
           >
             <FaGithub size={36} className="text-white" />
@@ -60,7 +61,7 @@ const Home = () => {
             href="https://www.linkedin.com/in/debasmita-biswal-935b56368"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#0077B5] p-4 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform hover:scale-110"
+            className="bg-[#0077B5] p-4 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform           hover:scale-110"
             title="LinkedIn"
           >
             <FaLinkedin size={36} className="text-white" />
