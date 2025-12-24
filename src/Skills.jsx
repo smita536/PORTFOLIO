@@ -27,83 +27,106 @@ function Skills() {
   const education = [
     {
       title: "Pursuing MCA",
-      institution: "GIFT AUTONOMOUS, BBSR",
+      institution: "GIFT Autonomous, Bhubaneswar",
+      iconClass: "fas fa-graduation-cap",
+      color: "text-indigo-600",
     },
     {
       title: "B.Sc in Chemistry Honours",
-      institution: "Mangala Mahavidalaya, Kakatpur, Puri",
+      institution: "Mangala Mahavidalaya, Kakatpur",
+      iconClass: "fas fa-flask",
+      color: "text-green-600",
     },
     {
       title: "Higher Secondary Education",
       institution: "Binayak Dev High School, Kakatpur",
+      iconClass: "fas fa-school",
+      color: "text-orange-500",
     },
   ];
 
   return (
     <section
       id="skills-education"
-      className="bg-gradient-to-br from-indigo-50 via-white to-lime-100 text-gray-800 py-20 px-6 md:px-20"
+      className="py-20 px-6 md:px-20 bg-gradient-to-r from-indigo-50 via-white to-lime-50"
     >
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-indigo-700">
-          🚀 Skills & 🎓 Education
-        </h2>
+      <div className="max-w-6xl mx-auto flex flex-col items-center bg-white border-l-8 border-indigo-500 p-10 rounded-xl shadow-xl transition-all duration-500">
+
+        {/* Section Heading */}
+        <div className="w-full flex justify-center mb-16">
+          <h2 className="text-4xl font-extrabold text-indigo-600 relative inline-block text-center">
+            Skills & Education
+            <span className="absolute left-0 -bottom-2 w-full h-1 bg-gradient-to-r from-indigo-500 to-lime-400 rounded"></span>
+          </h2>
+        </div>
 
         {/* Tech Stack */}
-        <div>
-          <h3 className="text-3xl font-bold mb-6 text-cyan-500 underline underline-offset-8 decoration-indigo-300">
+        <div className="w-full">
+          <h3 className="text-2xl font-bold text-indigo-700 mb-6 text-center">
             Tech Stack
           </h3>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 justify-center">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center">
             {techStack.map((tech, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-transform duration-300"
+                className="bg-indigo-50 rounded-lg p-4 flex flex-col items-center shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <i className={`${tech.iconClass} fa-3x ${tech.color}`}></i>
-                <p className="mt-2 font-semibold text-gray-700">{tech.name}</p>
+                <p className="mt-2 font-semibold text-gray-700">
+                  {tech.name}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Tools */}
-        <div className="mt-20">
-          <h3 className="text-3xl font-bold mb-6 text-cyan-500 underline underline-offset-8 decoration-indigo-300">
+        <div className="w-full mt-16">
+          <h3 className="text-2xl font-bold text-indigo-700 mb-6 text-center">
             Tools
           </h3>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 justify-center">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center">
             {tools.map((tool, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-transform duration-300"
+                className="bg-indigo-50 rounded-lg p-4 flex flex-col items-center shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <i className={`${tool.iconClass} fa-3x ${tool.color}`}></i>
-                <p className="mt-2 font-semibold text-gray-700">{tool.name}</p>
+                <p className="mt-2 font-semibold text-gray-700">
+                  {tool.name}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Education */}
-        <div className="mt-20 text-left">
-          <h3 className="text-3xl font-bold mb-6 text-cyan-500 underline underline-offset-8 decoration-indigo-300 text-center">
+        <div className="w-full mt-16">
+          <h3 className="text-2xl font-bold text-indigo-700 mb-6 text-center">
             Education
           </h3>
           <ul className="space-y-6 max-w-2xl mx-auto">
             {education.map((edu, index) => (
               <li
                 key={index}
-                className="bg-white border-l-4 border-indigo-500 shadow-md rounded-md p-4"
+                className="bg-indigo-50 border-l-4 border-indigo-500 p-5 rounded-md shadow hover:shadow-lg transition"
               >
-                <h4 className="text-xl font-semibold text-indigo-700">
-                  🎓 {edu.title}
-                </h4>
-                <p className="text-green-700 mt-1">{edu.institution}</p>
+                <div className="flex items-start gap-4">
+                  <i className={`${edu.iconClass} fa-2x ${edu.color} mt-1`}></i>
+                  <div>
+                    <h4 className="text-lg font-semibold text-indigo-700">
+                      {edu.title}
+                    </h4>
+                    <p className="text-gray-700 mt-1">
+                      {edu.institution}
+                    </p>
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
         </div>
+
       </div>
     </section>
   );
