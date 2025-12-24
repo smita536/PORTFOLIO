@@ -5,49 +5,55 @@ function About() {
   return (
     <section
       id="about"
-      className="py-20 px-6 md:px-20 bg-gradient-to-r from-indigo-50 via-white to-lime-50"
+      className="relative flex items-center justify-center text-center min-h-screen bg-cover bg-center px-4 md:px-0 pt-20"
+      style={{ backgroundImage: "url('/images/hero.jpg')" }}
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 bg-white border-l-8 border-indigo-500 p-10 rounded-xl shadow-xl transition-all duration-500">
-        {/* Left: Profile Image */}
-        <div className="flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <img
-            src={profileImg}
-            alt="Debasmita"
-            className="w-52 h-52 md:w-64 md:h-64 rounded-full object-cover border-4 border-indigo-500 shadow-md"
-          />
+      {/* Overlay like Home */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-0" />
+
+      {/* Content */}
+      <div className="relative z-10 text-white max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-12">
+        {/* Profile Image */}
+        <div className="group relative flex-shrink-0">
+          <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-indigo-400 shadow-lg transition-transform duration-300 group-hover:scale-105">
+            <img
+              src={profileImg}
+              alt="Debasmita"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 bg-indigo-500 opacity-0 group-hover:opacity-10 transition duration-300 rounded-full" />
         </div>
 
-        {/* Right: Text Content */}
-        <div className="text-center md:text-left max-w-xl">
-          <h2 className="text-4xl font-extrabold text-indigo-600 mb-6 relative inline-block">
+        {/* Text Content */}
+        <div className="text-center md:text-left max-w-2xl">
+          <h2 className="text-4xl font-extrabold text-lime-400 mb-6 relative inline-block">
             About Me
-            <span className="absolute left-0 -bottom-2 w-full h-1 bg-gradient-to-r from-indigo-500 to-lime-400 rounded"></span>
+            <span className="absolute left-0 -bottom-1 w-full h-1 bg-gradient-to-r from-indigo-500 to-lime-400 rounded"></span>
           </h2>
 
-          <p className="text-lg leading-relaxed text-gray-700 mb-4">
+          <p className="text-lg leading-relaxed text-white/90 mb-4">
             Hi, I’m{" "}
-            <span className="font-semibold text-indigo-700">Debasmita</span>, a
-            passionate MCA student and budding{" "}
-            <span className="text-lime-600 font-semibold">
+            <span className="font-semibold text-indigo-300">Debasmita</span>, a
+            passionate MCA student and aspiring{" "}
+            <span className="text-lime-300 font-semibold">
               Java Full Stack Developer
-            </span>. I specialize in crafting responsive, user-focused web apps
-            using{" "}
-            <span className="text-indigo-700 font-medium">
+            </span>. I love building responsive, clean web apps using{" "}
+            <span className="text-indigo-200 font-medium">
               Java, Spring Boot, React
             </span>{" "}
             and{" "}
-            <span className="text-indigo-700 font-medium">Tailwind CSS</span>.
+            <span className="text-indigo-200 font-medium">Tailwind CSS</span>.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-700 mb-4">
-             I’m dedicated to writing clean, scalable, and efficient code with
-            a focus on building elegant user interfaces and seamless backends.
+          <p className="text-lg leading-relaxed text-white/90 mb-4">
+            I'm focused on writing scalable, clean code and building seamless
+            UI/UX experiences with robust backends.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-700">
-             Apart from coding, I'm a curious lifelong learner who loves
-            exploring new tech trends, tools, and collaborating on meaningful
-            projects.
+          <p className="text-lg leading-relaxed text-white/90">
+            Beyond coding, I’m always exploring new tech, tools, and love
+            working on real-world collaborative projects.
           </p>
         </div>
       </div>

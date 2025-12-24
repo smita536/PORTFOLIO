@@ -9,7 +9,7 @@ function Contact() {
     message: "",
   });
 
-  const [status, setStatus] = useState(""); // success | error | loading
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,12 +20,13 @@ function Contact() {
     e.preventDefault();
     setStatus("loading");
 
-    const serviceID = "service_7e70jut";
-    const templateID = "template_xwgf8wg";
-    const publicKey = "4WSUxWT5U3iYUFZ5D";
-
     emailjs
-      .send(serviceID, templateID, formData, publicKey)
+      .send(
+        "service_7e70jut",
+        "template_xwgf8wg",
+        formData,
+        "4WSUxWT5U3iYUFZ5D"
+      )
       .then(() => {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
@@ -42,7 +43,7 @@ function Contact() {
     >
       <div className="max-w-6xl mx-auto">
 
-        {/* Section Heading */}
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-indigo-600 relative inline-block">
             Contact Me
@@ -50,18 +51,17 @@ function Contact() {
           </h2>
         </div>
 
-        {/* Contact Card */}
-        <div className="bg-white border-l-8 border-indigo-500 rounded-xl shadow-xl p-10
-                        hover:shadow-2xl transition-all duration-300">
+        {/* Card */}
+        <div className="bg-white border-l-8 border-indigo-500 rounded-xl shadow-xl p-10 hover:shadow-2xl transition">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
 
-            {/* Social Links */}
+            {/* Socials */}
             <div className="flex flex-col items-center gap-8 w-full lg:w-1/3">
               <a
                 href="https://www.linkedin.com/in/debasmita-biswal-935b56368"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-indigo-700 hover:text-indigo-500 transform hover:scale-125 transition"
+                className="text-indigo-700 hover:text-indigo-500 hover:scale-125 transition"
               >
                 <FaLinkedin size={44} />
               </a>
@@ -70,23 +70,22 @@ function Contact() {
                 href="https://github.com/smita536"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-800 hover:text-indigo-600 transform hover:scale-125 transition"
+                className="text-gray-800 hover:text-indigo-600 hover:scale-125 transition"
               >
                 <FaGithub size={44} />
               </a>
 
               <a
                 href="mailto:debasmitabiswal187@gmail.com"
-                className="text-lime-600 hover:text-lime-500 transform hover:scale-125 transition"
+                className="text-lime-600 hover:text-lime-500 hover:scale-125 transition"
               >
                 <FaEnvelope size={44} />
               </a>
             </div>
 
-            {/* Contact Form */}
+            {/* Form */}
             <form onSubmit={handleSubmit} className="w-full lg:w-2/3">
               <div className="space-y-6">
-
                 <input
                   type="text"
                   name="name"
@@ -94,9 +93,7 @@ function Contact() {
                   onChange={handleChange}
                   placeholder="Your Name"
                   required
-                  className="w-full p-4 border-b-2 border-indigo-400 bg-transparent
-                             text-gray-700 placeholder-gray-400
-                             focus:outline-none focus:border-indigo-600 transition"
+                  className="w-full p-4 border-b-2 border-indigo-400 bg-transparent focus:outline-none focus:border-indigo-600"
                 />
 
                 <input
@@ -106,9 +103,7 @@ function Contact() {
                   onChange={handleChange}
                   placeholder="Your Email"
                   required
-                  className="w-full p-4 border-b-2 border-indigo-400 bg-transparent
-                             text-gray-700 placeholder-gray-400
-                             focus:outline-none focus:border-indigo-600 transition"
+                  className="w-full p-4 border-b-2 border-indigo-400 bg-transparent focus:outline-none focus:border-indigo-600"
                 />
 
                 <textarea
@@ -118,15 +113,13 @@ function Contact() {
                   rows="5"
                   placeholder="Write your message..."
                   required
-                  className="w-full p-4 border-b-2 border-indigo-400 bg-transparent
-                             text-gray-700 placeholder-gray-400
-                             focus:outline-none focus:border-indigo-600 transition"
+                  className="w-full p-4 border-b-2 border-indigo-400 bg-transparent focus:outline-none focus:border-indigo-600"
                 />
 
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className={`w-full py-4 font-semibold rounded-lg shadow-md text-white transition-all duration-300 ${
+                  className={`w-full py-4 rounded-lg font-semibold text-white transition ${
                     status === "loading"
                       ? "bg-gray-400 cursor-not-allowed"
                       : "bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600"
@@ -136,14 +129,14 @@ function Contact() {
                 </button>
 
                 {status === "success" && (
-                  <p className="text-green-600 text-center font-medium">
+                  <p className="text-green-600 text-center">
                     ✅ Message sent successfully!
                   </p>
                 )}
 
                 {status === "error" && (
-                  <p className="text-red-600 text-center font-medium">
-                    ❌ Failed to send message. Please try again.
+                  <p className="text-red-600 text-center">
+                    ❌ Failed to send message. Try again.
                   </p>
                 )}
               </div>
@@ -156,11 +149,10 @@ function Contact() {
           <p className="text-gray-800">
             📧 debasmitabiswal187@gmail.com | 📞 +91-9668542134
           </p>
-          <p className="text-gray-900 font-semibold mt-2">
+          <p className="font-semibold mt-2">
             Crafted with ❤️ by Debasmita Biswal
           </p>
         </div>
-
       </div>
     </section>
   );
