@@ -34,7 +34,7 @@ function About() {
 
           <p className="text-lg leading-relaxed text-white/90 mb-4">
             Hi, I’m{" "}
-            <span className="font-semibold text-indigo-300">Debasmita</span>, a
+            <span className="font-semibold text-indigo-300">Debasmita Biswal</span>, a
             passionate MCA student and aspiring{" "}
             <span className="text-lime-300 font-semibold">
               Java Full Stack Developer
